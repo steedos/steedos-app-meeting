@@ -1,4 +1,4 @@
-# Steedos CRM
+# Steedos Meeting App
 
 ### Install dependencies
 - [Install NodeJS, v8.0.0 or later.](https://nodejs.org/en/)
