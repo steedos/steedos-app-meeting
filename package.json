@@ -1,0 +1,23 @@
+{
+  "name": "@steedos/app-meeting",
+  "version": "1.0.0",
+  "description": "Meeting room booking",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/steedos/app-meeting.git"
+  },
+  "author": "Jack Zhuang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/steedos/app-meeting/issues"
+  },
+  "homepage": "https://github.com/steedos/app-meeting#readme",
+  "dependencies": {
+    "chokidar": "2.1.2",
+    "js-yaml": "3.12.1"
+  }
+}
