@@ -6,6 +6,7 @@ const appFileName = 'app.yml';
 const objectFolderName = 'objects';
 const triggerFolderName = 'triggers';
 const actionFolderName = 'actions';
+const reportFolderName = 'reports';
 const srcDirectory = path.join(__dirname, "src");
 
 let loadObjectsMapping = {}
@@ -39,7 +40,7 @@ const loadFile = (filePath)=>{
 const loadApp = (appFilePath)=>{
     let app = loadFile(appFilePath);
     if(!_.isEmpty(app)){
-        Creator.Apps[app.name] = app;
+        Creator.Apps[ app._id || app.name] = app;
     }
 }
 
@@ -114,38 +115,54 @@ const loadTrigger = (triggerPath)=>{
     loadObjectInCreator(object);
 }
 
+const loadReport = (reportPath)=>{
+    let report = loadFile(reportPath);
+    Creator.Reports[report._id] = report;
+}
+
 if(fs.statSync(srcDirectory).isDirectory()){
     fs.readdir(srcDirectory, (err, appFiles)=>{
         //读取 app
-        const appFilePath = path.join(srcDirectory, appFileName)
+        const appFilePath = path.join(srcDirectory, appFileName);
         if(fs.existsSync(appFilePath)){
             loadApp(appFilePath);
-            fs.watchFile(appFilePath, (curr, prev) => {
-                loadApp(appFilePath);
-            });
+            // fs.watchFile(appFilePath, (curr, prev) => {
+            //     loadApp(appFilePath);
+            // });
         }
         
         //读取 object
-        const objectFolderPath = path.join(srcDirectory, objectFolderName)
+        const objectFolderPath = path.join(srcDirectory, objectFolderName);
         if(fs.existsSync(objectFolderPath)){
             fs.readdir(objectFolderPath, (err, objectFiles)=>{
                 _.each(objectFiles, (aof)=>{
                     const objectPath = path.join(objectFolderPath, aof);
                     loadObject(objectPath);
-                    fs.watchFile(objectPath, (curr, prev) => {
-                        loadObject(objectPath);
-                    });
+                    // fs.watchFile(objectPath, (curr, prev) => {
+                    //     loadObject(objectPath);
+                    // });
                 })
             })
         }
 
         //读取 triggers
-        const triggerFolderPath = path.join(srcDirectory, triggerFolderName)
+        const triggerFolderPath = path.join(srcDirectory, triggerFolderName);
         if (fs.existsSync(triggerFolderPath)) {
             fs.readdir(triggerFolderPath, (err, triggerFiles)=>{
                 _.each(triggerFiles, (tf)=>{
                     const triggerPath = path.join(triggerFolderPath, tf);
-                    loadTrigger(triggerPath)
+                    loadTrigger(triggerPath);
+                })
+            })
+        }
+
+        //读取 reports
+        const reportFolderPath = path.join(srcDirectory, reportFolderName);
+        if (fs.existsSync(reportFolderPath)) {
+            fs.readdir(reportFolderPath, (err, reportFiles)=>{
+                _.each(reportFiles, (rf)=>{
+                    const reportPath = path.join(reportFolderPath, rf);
+                    loadReport(reportPath);
                 })
             })
         }
@@ -153,7 +170,7 @@ if(fs.statSync(srcDirectory).isDirectory()){
     })
 
     //监控apps文件夹变化
-    fs.watch(srcDirectory, (eventType, filename)=>{
-        console.log('fs.watch', eventType, filename);
-    })
+    // fs.watch(srcDirectory, (eventType, filename)=>{
+    //     console.warn('文件修改未生效，请重启服务', eventType, filename);
+    // })
 }
