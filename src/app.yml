@@ -1,8 +1,8 @@
-url: /app/meeting,
-name: meeting,
-description: Meeting App,
-icon_slds: event ,
-is_creator: true,
+_id: meeting
+name: 会议
+description: Meeting App
+icon_slds: event
+is_creator: true
 objects: 
   - meeting
   - meetingroom
