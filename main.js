@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 const yaml = require('js-yaml');
 
-const appFileName = 'app.json';
+const appFileName = 'app.yml';
 const objectFolderName = 'objects';
 const triggerFolderName = 'triggers';
 const actionFolderName = 'actions';
@@ -101,7 +101,7 @@ const loadTrigger = (triggerPath)=>{
     }
 
     _.each(trigger, (attr, key)=>{
-        console.log('attr', key, attr);
+        console.log('attr', key);
         let tm = triggerMapping[key]
         if(!_.isEmpty(tm)){
             let tkey = `_${key}`.toLocaleUpperCase();
