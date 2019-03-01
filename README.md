@@ -1,10 +1,11 @@
-# Steedos Meeting App
+# 会议管理系统
+使用 Steedos 快速开发会议管理系统
 
 ### 安装开发环境
 - [Install NodeJS, v8.0.0 or later.](https://nodejs.org/en/)
 - [Install MongoDB Community Server v3.4 or later](https://www.mongodb.com/download-center/community)
 
-### 安装 Steedos App 开发工具
+### 安装 Steedos 开发工具
 ```
 npm install steedos-server --global
 npm install steedos-cli --global
@@ -21,3 +22,6 @@ steedos run
 
 ### 界面效果
 ![按日查看会议](doc/meeting-day-view.png)
+
+### 文档
+- [Steedos 开发文档](https://github.com/steedos/help/blob/master/zh-cn/creator/README.md)
