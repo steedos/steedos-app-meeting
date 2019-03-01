@@ -10,11 +10,6 @@ npm install steedos-server --global
 npm install steedos-cli --global
 ```
 
-### Install node_modules
-```
-npm install
-```
-
 ### Run
 ```
 steedos run
