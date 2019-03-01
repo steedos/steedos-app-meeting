@@ -128,7 +128,6 @@ fields:
               }).name;
               return organziation;
             }
-    required: true
     sortable: true
     _defaultValue: |-
       function () {
