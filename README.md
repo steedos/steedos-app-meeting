@@ -8,12 +8,11 @@
 ### 安装 Steedos 开发工具
 ```
 npm install steedos-server --global
-npm install steedos-cli --global
 ```
 
 ### 运行
 ```
-steedos run
+node server
 ```
 
 ### 定制

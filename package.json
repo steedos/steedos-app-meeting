@@ -18,7 +18,8 @@
   },
   "homepage": "https://github.com/steedos/app-meeting#readme",
   "dependencies": {
-    "chokidar": "2.1.2",
-    "js-yaml": "3.12.1"
+    "@steedos/app": "^1.1.0",
+    "@steedos/meteor-bundle-runner": "^1.1.3",
+    "steedos-server": "0.0.7"
   }
 }
