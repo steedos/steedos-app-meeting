@@ -12,7 +12,7 @@ fields:
     reference_sort:
       name: 1
     reference_limit: 20
-    optionsFunction: |-
+    optionsFunction: !!js/function |
       function (values) {
               var options, result, rooms;
               result = [];
@@ -34,34 +34,13 @@ fields:
               return result;
             }
     sortable: true
-    _optionsFunction: |-
-      function (values) {
-              var options, result, rooms;
-              result = [];
-              options = {
-                $orderby: 'name',
-                $select: 'enable_open,admins,name'
-              };
-              rooms = Creator.odata.query('meetingroom', options, true);
-              rooms.forEach(function (room) {
-                var ref;
-
-                if ((room != null ? (ref = room.admins) != null ? ref.indexOf(Meteor.userId()) : void 0 : void 0) > -1 || (room != null ? room.enable_open : void 0) || Steedos.isSpaceAdmin()) {
-                  return result.push({
-                    label: room.name,
-                    value: room._id
-                  });
-                }
-              });
-              return result;
-            }
     name: room
     filterable: true
   start:
     label: 开始时间
     type: datetime
     required: true
-    defaultValue: |-
+    defaultValue: !!js/function |
       function () {
               var now, reValue;
               now = new Date();
@@ -71,30 +50,12 @@ fields:
               return reValue;
             }
     sortable: true
-    _defaultValue: |-
-      function () {
-              var now, reValue;
-              now = new Date();
-              reValue = new Date(now.getTime() + 1 * 60 * 60 * 1000);
-              reValue.setMinutes(0);
-              reValue.setSeconds(0);
-              return reValue;
-            }
     name: start
   end:
     label: 结束时间
     type: datetime
     required: true
-    defaultValue: |-
-      function () {
-              var now, reValue;
-              now = new Date();
-              reValue = new Date(now.getTime() + 2 * 60 * 60 * 1000);
-              reValue.setMinutes(0);
-              reValue.setSeconds(0);
-              return reValue;
-            }
-    _defaultValue: |-
+    defaultValue: !!js/function |
       function () {
               var now, reValue;
               now = new Date();
@@ -114,7 +75,7 @@ fields:
   unit:
     label: 参会单位
     type: text
-    defaultValue: |-
+    defaultValue: !!js/function |
       function () {
               var collection, organziation;
               collection = Creator.Collections["organizations"];
@@ -129,20 +90,6 @@ fields:
               return organziation;
             }
     sortable: true
-    _defaultValue: |-
-      function () {
-              var collection, organziation;
-              collection = Creator.Collections["organizations"];
-              organziation = collection.findOne({
-                users: Meteor.userId(),
-                space: Session.get("spaceId")
-              }, {
-                fields: {
-                  name: 1
-                }
-              }).name;
-              return organziation;
-            }
     name: unit
   count:
     label: 参会人数
@@ -151,21 +98,7 @@ fields:
   phone:
     label: 联系方式
     type: text
-    defaultValue: |-
-      function () {
-              var collection, mobile;
-              collection = Creator.Collections["space_users"];
-              mobile = collection.findOne({
-                user: Meteor.userId(),
-                space: Session.get("spaceId")
-              }, {
-                fields: {
-                  mobile: 1
-                }
-              }).mobile;
-              return mobile;
-            }
-    _defaultValue: |-
+    defaultValue: !!js/function |
       function () {
               var collection, mobile;
               collection = Creator.Collections["space_users"];
