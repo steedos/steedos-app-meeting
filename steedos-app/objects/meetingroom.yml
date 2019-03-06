@@ -117,17 +117,3 @@ permission_set:
     allowRead: false
     modifyAllRecords: false
     viewAllRecords: true
-triggers:
-  before.insert.server.meetingroom:
-    on: server
-    when: before.insert
-    todo: |-
-      function (userId, doc) {
-              if (!(doc != null ? doc.admins : void 0)) {
-                doc['admins'] = [];
-              }
-
-              if ((doc != null ? doc.admins.indexOf(doc.owner) : void 0) < 0) {
-                return doc.admins.push(doc.owner);
-              }
-            }
