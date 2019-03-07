@@ -134,6 +134,7 @@ fields:
     is_wide: true
     name: description
   owner:
+    name: owner
     hidden: true
 calendar:
   textExpr: name
