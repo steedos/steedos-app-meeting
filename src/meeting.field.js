@@ -3,7 +3,7 @@ exports.extendFieldClient = {
   on: "client",
   fields: {
     room: {
-      options: function (values) {
+      optionsFunction: function (values) {
         var options, result, rooms;
         result = [];
         options = {
