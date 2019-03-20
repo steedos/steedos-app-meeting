@@ -1,13 +1,17 @@
-var clashRemind = function(_id,room,start,end){
-	meetings = Creator.getCollection("meeting").find({_id:{ $ne:_id},room:room,$or: [{start:{$lte:start},end:{$gt:start}},{start:{$lt:end},end:{$gte:end}},{start:{$gte:start},end:{$lte:end}}]}).fetch()
-    return meetings.length
-}
+var Steedos = require('../../../packages/core')
 
-exports.beforeInsert = {
-  object: "meeting",
-  on: "server",
-  when: "beforce.insert",
-  todo: function (userId, doc) {
+class MeetingTriggers extends Steedos.Trigger{
+
+  listenTo(){
+    return 'meeting'
+  }
+
+  clashRemind(_id,room,start,end){
+    var meetings = Creator.getCollection("meeting").find({_id:{ $ne:_id},room:room,$or: [{start:{$lte:start},end:{$gt:start}},{start:{$lt:end},end:{$gte:end}},{start:{$gte:start},end:{$lte:end}}]}).fetch()
+    return meetings.length
+  }
+
+  beforeInsert(userId, doc){
     var clashs;
 
     if (doc.end <= doc.start) {
@@ -20,14 +24,8 @@ exports.beforeInsert = {
         throw new Meteor.Error(500, "该时间段的此会议室已被占用");
     }
   }
-}
 
-
-exports.beforeUpdate = {
-  object: "meeting",
-  on: "server",
-  when: "beforce.update",
-  todo:  function (userId, doc, fieldNames, modifier, options) {
+  beforeUpdate(userId, doc, fieldNames, modifier, options){
     var clashs, end, ref, ref1, ref2, ref3, ref4, ref5, ref6, ref7, room, start;
 
     if ((modifier != null ? (ref = modifier.$set) != null ? ref.start : void 0 : void 0) || (modifier != null ? (ref1 = modifier.$set) != null ? ref1.end : void 0 : void 0)) {
@@ -59,4 +57,7 @@ exports.beforeUpdate = {
       throw new Meteor.Error(500, "该时间段的此会议室已被占用");
     }
   }
+
 }
+
+module.exports = MeetingTriggers
