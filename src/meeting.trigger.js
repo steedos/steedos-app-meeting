@@ -18,7 +18,7 @@ class MeetingTriggers extends Steedos.Trigger{
         throw new Meteor.Error(500, "开始时间需小于结束时间");
     }
 
-    clashs = clashRemind(doc._id, doc.room, doc.start, doc.end);
+    clashs = this.clashRemind(doc._id, doc.room, doc.start, doc.end);
 
     if (clashs) {
         throw new Meteor.Error(500, "该时间段的此会议室已被占用");
@@ -51,7 +51,7 @@ class MeetingTriggers extends Steedos.Trigger{
       room = doc.room;
     }
 
-    clashs = clashRemind(doc._id, room, start, end);
+    clashs = this.clashRemind(doc._id, room, start, end);
 
     if (clashs) {
       throw new Meteor.Error(500, "该时间段的此会议室已被占用");
