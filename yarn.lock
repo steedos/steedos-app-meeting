@@ -822,11 +822,11 @@
     underscore "^1.9.1"
 
 "@steedos/client@^1.23.0-alpha.13":
-  version "1.23.0-alpha.12"
-  resolved "https://registry.npm.taobao.org/@steedos/client/download/@steedos/client-1.23.0-alpha.12.tgz#46f713725367e375811b4c8891e538343b6fb95b"
-  integrity sha1-RvcTclNn43WBG0yIkeU4NDtvuVs=
+  version "1.23.32"
+  resolved "https://registry.yarnpkg.com/@steedos/client/-/client-1.23.32.tgz#229fb9437a1c5331c4f8c75b5588678290e7bbc5"
+  integrity sha512-mNIDOVjjPma2w8SOCKxZzMGyqm5V7+/7c5wkNDQW7kau6tlkyVhnFFI5Lc+FH63aOBSDbI7ACDesOvg14H+Aow==
   dependencies:
-    "@steedos/filters" "^1.23.0-alpha.12"
+    "@steedos/filters" "^1.23.32"
     node-fetch "^2.6.1"
 
 "@steedos/core@^1.23.0-alpha.12":
@@ -874,6 +874,15 @@
   version "1.23.0-alpha.12"
   resolved "https://registry.npm.taobao.org/@steedos/filters/download/@steedos/filters-1.23.0-alpha.12.tgz#403b4da177e5574382e26bfa55470aff8202923c"
   integrity sha1-QDtNoXflV0OC4mv6VUcK/4ICkjw=
+  dependencies:
+    "@babel/runtime" "^7.5.4"
+    moment "^2.24.0"
+    underscore "^1.9.1"
+
+"@steedos/filters@^1.23.32":
+  version "1.23.32"
+  resolved "https://registry.yarnpkg.com/@steedos/filters/-/filters-1.23.32.tgz#b141feabf1f9711880b60477e181400f8fb123e3"
+  integrity sha512-MQ4k09iI93249zO7YeaO/Kg+LZ6iSKDlFMpRGw7pfTNjRDi9uFu7vMqWfLn09hA67IxVM9CTEEso/74u52tUbA==
   dependencies:
     "@babel/runtime" "^7.5.4"
     moment "^2.24.0"
@@ -5055,9 +5064,9 @@ lodash.union@^4.6.0:
   integrity sha1-SLtQiECfFvGCFmZkHETdGqrjzYg=
 
 lodash@4.17.15, lodash@^3.10.1, lodash@^4.15.0, lodash@^4.17.11, lodash@^4.17.14, lodash@^4.17.15, lodash@^4.17.19:
-  version "4.17.20"
-  resolved "https://registry.npm.taobao.org/lodash/download/lodash-4.17.20.tgz#b44a9b6297bcb698f1c51a3545a2b3b368d59c52"
-  integrity sha1-tEqbYpe8tpjxxRo1RaKzs2jVnFI=
+  version "4.17.21"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
+  integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
 
 lolex@2.3.1:
   version "2.3.1"
@@ -8666,7 +8675,7 @@ xmlbuilder@~11.0.0:
   resolved "https://registry.npm.taobao.org/xmlbuilder/download/xmlbuilder-11.0.1.tgz?cache=0&sync_timestamp=1600349105009&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fxmlbuilder%2Fdownload%2Fxmlbuilder-11.0.1.tgz#be9bae1c8a046e76b31127726347d0ad7002beb3"
   integrity sha1-vpuuHIoEbnazESdyY0fQrXACvrM=
 
-xmldom@0.2.1, xmldom@=0.1.15, xmldom@=0.1.19, xmldom@^0.3.0, "xmldom@github:auth0/xmldom#v0.1.19-auth0_1", xmldom@~0.1.15:
+xmldom@0.2.1, xmldom@=0.1.15, xmldom@=0.1.19, xmldom@^0.3.0, xmldom@auth0/xmldom#v0.1.19-auth0_1, xmldom@~0.1.15:
   version "0.2.1"
   resolved "https://registry.npm.taobao.org/xmldom/download/xmldom-0.2.1.tgz#cac9465066f161e1c3302793ea4dbe59c518274f"
   integrity sha1-yslGUGbxYeHDMCeT6k2+WcUYJ08=
