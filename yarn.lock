@@ -822,11 +822,11 @@
     underscore "^1.9.1"
 
 "@steedos/client@^1.23.0-alpha.13":
-  version "1.23.0-alpha.12"
-  resolved "https://registry.npm.taobao.org/@steedos/client/download/@steedos/client-1.23.0-alpha.12.tgz#46f713725367e375811b4c8891e538343b6fb95b"
-  integrity sha1-RvcTclNn43WBG0yIkeU4NDtvuVs=
+  version "1.23.42"
+  resolved "https://registry.yarnpkg.com/@steedos/client/-/client-1.23.42.tgz#79db3ec43b2732f76a40407e6d75a40ee35d998c"
+  integrity sha512-IA5+J8cTYxcZBQon5NdukKr4I4P/36Pg03tRHzvVxJEX4WH+GAix0WMeIUjslnImcN+huvXOH+EMBImTO+reag==
   dependencies:
-    "@steedos/filters" "^1.23.0-alpha.12"
+    "@steedos/filters" "^1.23.42"
     node-fetch "^2.6.1"
 
 "@steedos/core@^1.23.0-alpha.12":
@@ -874,6 +874,15 @@
   version "1.23.0-alpha.12"
   resolved "https://registry.npm.taobao.org/@steedos/filters/download/@steedos/filters-1.23.0-alpha.12.tgz#403b4da177e5574382e26bfa55470aff8202923c"
   integrity sha1-QDtNoXflV0OC4mv6VUcK/4ICkjw=
+  dependencies:
+    "@babel/runtime" "^7.5.4"
+    moment "^2.24.0"
+    underscore "^1.9.1"
+
+"@steedos/filters@^1.23.42":
+  version "1.23.42"
+  resolved "https://registry.yarnpkg.com/@steedos/filters/-/filters-1.23.42.tgz#b70b72156fdefb6bb7e945619024cc298fc05b46"
+  integrity sha512-9w7puc98drD6n9GOqKUfZ/yjp7FakQODknKtT5gDdKjQEENWeyX4nu/VsYe0Ujzk3LdShnezEJ7zhaDM9p149w==
   dependencies:
     "@babel/runtime" "^7.5.4"
     moment "^2.24.0"
@@ -6206,9 +6215,9 @@ path-type@^3.0.0:
     pify "^3.0.0"
 
 pathval@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.npm.taobao.org/pathval/download/pathval-1.1.0.tgz#b942e6d4bde653005ef6b71361def8727d0645e0"
-  integrity sha1-uULm1L3mUwBe9rcTYd74cn0GReA=
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/pathval/-/pathval-1.1.1.tgz#8534e77a77ce7ac5a2512ea21e0fdb8fcf6c3d8d"
+  integrity sha512-Dp6zGqpTdETdR63lehJYPeIOqpiNBNtc7BpWSLrOje7UaIsE5aY92r/AunQA7rsXvet3lrJ3JnZX29UPTKXyKQ==
 
 pbkdf2@^3.0.3:
   version "3.1.1"
@@ -8666,7 +8675,7 @@ xmlbuilder@~11.0.0:
   resolved "https://registry.npm.taobao.org/xmlbuilder/download/xmlbuilder-11.0.1.tgz?cache=0&sync_timestamp=1600349105009&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fxmlbuilder%2Fdownload%2Fxmlbuilder-11.0.1.tgz#be9bae1c8a046e76b31127726347d0ad7002beb3"
   integrity sha1-vpuuHIoEbnazESdyY0fQrXACvrM=
 
-xmldom@0.2.1, xmldom@=0.1.15, xmldom@=0.1.19, xmldom@^0.3.0, "xmldom@github:auth0/xmldom#v0.1.19-auth0_1", xmldom@~0.1.15:
+xmldom@0.2.1, xmldom@=0.1.15, xmldom@=0.1.19, xmldom@^0.3.0, xmldom@auth0/xmldom#v0.1.19-auth0_1, xmldom@~0.1.15:
   version "0.2.1"
   resolved "https://registry.npm.taobao.org/xmldom/download/xmldom-0.2.1.tgz#cac9465066f161e1c3302793ea4dbe59c518274f"
   integrity sha1-yslGUGbxYeHDMCeT6k2+WcUYJ08=
